@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Sentiment Analysis Results ✨</h1>
+        <p><strong>Review:</strong> {{ text }}</p>
+        <p><strong>Translated Review:</strong> {{ translated_text }}</p>
+        <div class="results">
+            <h2>VADER Results:</h2>
+            <ul>
+                <li>Positive: {{ result.vader['pos'] }}</li>
+                <li>Neutral: {{ result.vader['neu'] }}</li>
+                <li>Negative: {{ result.vader['neg'] }}</li>
+                <li>Compound: {{ result.vader['compound'] }}</li>
+            </ul>
+            <h2>RoBERTa Results:</h2>
+            <ul>
+                <li>Positive: {{ result.roberta['roberta_pos'] }}</li>
+                <li>Neutral: {{ result.roberta['roberta_neu'] }}</li>
+                <li>Negative: {{ result.roberta['roberta_neg'] }}</li>
+            </ul>
+        </div>
+        <a href="/" class="btn">🔙 Back to Home</a>
+    </div>
+</body>
+</html>
